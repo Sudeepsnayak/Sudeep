@@ -1,11 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.parallax {
+  
+  background-image: url("image.jpg");
+
+  min-height: 500px; 
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.caption {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+  margin: 10%;
+}
+
+.abc{
+    background-image: url("pic.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax {
+    background-attachment: scroll;
+  }
+</style>
 </head>
 <body>
-    
+
+<p>Scroll Up and Down this page to see the parallax scrolling effect.</p>
+
+<div class="parallax"></div>
+
+<div class="caption">
+    <span class="border">SCROLL DOWN</span>
+
+<div style="height:200px;background-color:rgb(240, 237, 237);font-size:36px">
+Scroll Up and Down this page to see the parallax scrolling effect.
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>
+
+<div class="abc"></div>
+
+<div style="height: 100px;background-color: brown;font-size:36px;">
+ An image is a visual representation of something, 
+while a digital image is a binary representation of visual data.
+</div>
+
+
+
 </body>
 </html>
