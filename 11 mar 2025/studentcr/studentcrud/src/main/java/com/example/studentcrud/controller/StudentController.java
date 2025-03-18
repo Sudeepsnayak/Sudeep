@@ -1,5 +1,6 @@
 package com.example.studentcrud.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +22,8 @@ public class StudentController {
 
     @GetMapping("/list")
     public String list(Model model) {
-        model.addAttribute("student", studentService.listAll());
-        return "student/index"; 
+        model.addAttribute("student",studentService.listAll() );
+        return "student/index";
     }
 
     @GetMapping("/create")
@@ -38,23 +39,20 @@ public class StudentController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteUser(@PathVariable Long id) {
-        studentService.deleteStudent(id);  
-        return "redirect:/users/list";  
-    }
-    
-    @GetMapping("/edit/{id}")
-    public String editStudent(@PathVariable Long id,Model model) {
-        model.addAttribute("student", studentService.getStudent(id));
-        return "student/edit";  
-    }
-
-    @PostMapping("/update/(id)")
-    public String saveStudent(@PathVariable Long id,@ModelAttribute Student stu) {
-        stu.setId(id);
-        studentService.saveStudent(stu);
-
+    public String deleteStudent(@PathVariable Long id) {
+        studentService .deleteStudent(id);
         return "redirect:/users/list";
     }
-   
+
+    @GetMapping("/edit/{id}")
+    public String editStudent(@PathVariable Long id, Model model) {
+        studentService .getStudent(id);
+        return "student/edit";
+    }
+    @PostMapping("/update/{id}")
+    public String Student( @PathVariable Long id,@ModelAttribute Student stu) {
+        stu. setId(id);
+        studentService.saveStudent(stu);
+        return "redirect:/users/list";
+    }
 }
