@@ -7,19 +7,18 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name = "employee")
-public class Employee {
+@Table(name = "staff")
+public class Staff {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     private Long id;
-
     private String name;
     private String email;
     private String phone;
-    private String dob;
-    private String address;
-    private String gender;
-    private String employeeshift;
+    private String profilepic;
+    
+   
     
     public Long getId() {
         return id;
@@ -52,33 +51,13 @@ public class Employee {
         this.phone = phone;
     }
 
-    public String getDob() {
-        return dob;
+    public String getProfilepic() {
+        return profilepic;
     }
 
-    public void setDob(String dob) {
-        this.dob= dob;
+    public void setProfilepic(String profilepic) {
+        this.profilepic = profilepic;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-    public String getEmployeeshift() {
-        return employeeshift;
-    }
-
-    public void setEmployeeshift(String employeeshift) {
-        this.employeeshift = employeeshift;
-    }
+   
 }

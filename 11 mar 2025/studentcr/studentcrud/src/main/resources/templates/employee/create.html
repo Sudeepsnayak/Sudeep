@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div th:replace="fragments/nav :: menu"></div>
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="w-50">
             <h1 class="mt-5 text-center">Create Employee</h1>
@@ -20,8 +22,34 @@
                     <input type="email" class="form-control" id="employeeEmail" th:field="*{email}" placeholder="Enter employee email">
                 </div>
                 <div class="form-group">
-                    <label for="employeeAge">Phone</label>
+                    <label for="employeePhone">Phone</label>
                     <input type="number" class="form-control" id="employeePhone" th:field="*{phone}" placeholder="Enter employee Phone">
+                </div>
+                <div class="form-group">
+                    <label for="Dob">Dob:</label>
+                    <input type="date" id="Dob" th:field="*{Dob}" name="Dob">
+                </div>
+                <div class="form-group">
+                    <label for="employeeAddress">Address</label>
+                    <input type="text" class="form-control" id="employeeAddress" th:field="*{address}" placeholder="Enter employee Address">
+                </div>
+                <div class="form-group">
+                    <p>Gender:</p>
+                      <input type="radio" id="Male" th:field="*{gender}" value="Male">
+                        <label for="Male">Male</label><br>
+                    <input type="radio" id="Female" th:field="*{gender}" value="Female">
+                     <label for="female">Female</label><br>
+                     <input type="radio" id="Others" th:field="*{gender}" value="Others">
+                     <label for="others">Others</label>
+                </div>
+                <div class="form-group">
+                    <p>Shift:</p>
+                    <input type="checkbox" id="Shift A"  th:field="*{employeeshift}" value="Shift A">
+                    <label for="Shift A">Shift A</label><br>
+                    <input type="checkbox" id="Shift B"  th:field="*{employeeshift}" value="Shift B">
+                    <label for="Shift B">Shift B</label><br>
+                    <input type="checkbox" id="Shift C"  th:field="*{employeeshift}" value="Shift C">
+                    <label for="Shift C">Shift C</label>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Submit</button>
             </form>

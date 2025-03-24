@@ -10,10 +10,11 @@
 </head>
 <body>
   <div th:replace="fragments/nav :: menu"></div>
-  <div class="container mt-3">
-    <h2>Student List</h2>
+<div class="container mt-3">
+    <h2>Staff List</h2>
     <a th:href="@{/users/create}" class="btn btn-warning m-3">Add Student</a>
     <a th:href="@{/sudeep/create}" class="btn btn-warning m-3">Add Employee</a>
+    <a th:href="@{/staff/create}" class="btn btn-warning m-3">Add Staff</a>
 
     <table class="table table-success table-striped">
     <thead class="table-dark">
@@ -22,18 +23,20 @@
         <th>Name</th>
         <th>Email</th>
         <th>phone</th>
+        <th>profilepic</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr th:each="stu: ${student}">
+      <tr th:each="stu: ${staff}">
         <td  th:text="${stu.id}"></td>
+        <td> <img th:src="${ stu.profilepic != null ? stu.profilepic : '/upload/image.jpg'  }" th:alt="${stu.profilepic}" height="50px"/></td>
         <td  th:text="${stu.name}"></td>
         <td  th:text="${stu.email}"></td>
         <td  th:text="${stu.phone}"></td>
         <td>
-          <a th:href="@{/users/edit/{id}(id=${stu.id})}" class="btn btn-primary">Edit</a>
-          <a th:href="@{/users/delete/{id}(id=${stu.id})}" class="btn btn-danger">Delete</a>
+          <a th:href="@{/staff/edit/{id}(id=${stu.id})}" class="btn btn-primary">Edit</a>
+          <a th:href="@{/staff/delete/{id}(id=${stu.id})}" class="btn btn-danger">Delete</a>
         </td>
       </tr>
     </tbody>
